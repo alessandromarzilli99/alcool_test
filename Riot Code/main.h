@@ -3,7 +3,7 @@
 
 void call_back(void* arg);
 int distance_ultrasonic(void);
-int read_mq135(void);
+int read_mq3(void);
 static void *emcute_thread(void *arg);
 static int pub(char* topic,char* msg);
 static void on_pub(const emcute_topic_t *topic, void *data, size_t len);

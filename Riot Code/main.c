@@ -1,4 +1,4 @@
- #include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -19,16 +19,13 @@
 #include "main.h"
 
 //mq135
-#define RES ADC_RES_8BIT
+#define RES ADC_RES_10BIT
+#define MIN         (100U)
 //servo
 #define DEV         PWM_DEV(0)
 #define CHANNEL     0
 #define SERVO_MIN        (1000U)
 #define SERVO_MAX        (2000U)
-#define STEP_LOWER_BOUND (900U)
-#define STEP_UPPER_BOUND (2100U)
-#define STEP             (10U)
-#define WAIT             (10000U)
 
 //MQTTS
 #define EMCUTE_PRIO         (THREAD_PRIORITY_MAIN - 1)
@@ -39,7 +36,6 @@
 #define TOPIC_MAXLEN        (64U)
 #define TOPIC_IN            "topic_in"
 #define TOPIC_OUT1          "alcool_level"
-#define TOPIC_OUT2          "box"
 
 //to add addresses to board interface
 extern int _gnrc_netif_config(int argc, char **argv);
@@ -107,9 +103,11 @@ int distance_ultrasonic(void){
 
 
 //mq135 sensor
-int read_mq135(void){
+int read_mq3(void){
     int sample = 0;
+    int min = 100;
     sample = adc_sample(ADC_LINE(0), RES);
+    sample = (sample > min) ? sample - min : 0;
     return sample;
 }
 
@@ -276,10 +274,11 @@ void check_alcool(void){
     int sample = 0;
     char msg[4];
 
-    sample=read_mq135();
+    sample=read_mq3();
+    
     sprintf(msg, "%d", sample);
 
-    if (sample > 100) {
+    if (sample > 450) {
         printf("Alert: value = %i\n", sample);
         pub(TOPIC_IN,"NON GUIDARE ST*ONZO!!!!!");//prova se va mqtts
     } else {
@@ -287,8 +286,6 @@ void check_alcool(void){
         //open box keys
         servo_set(&servo, SERVO_MIN);
         box_keys=1;
-        //se voglio comunicare che ho aperto box
-        pub(TOPIC_OUT2,"1");
     }
     
     pub(TOPIC_OUT1,msg); //pub level of alcool when measured so it can be read on the web site
