@@ -6,12 +6,10 @@ import paho.mqtt.publish as publish
 
 TOPIC_IN = "topic_in"
 TOPIC_OUT1 = "alcool_level"
-TOPIC_OUT2 = "box"
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
     client.subscribe(TOPIC_OUT1)
-    client.subscribe(TOPIC_OUT2)
 
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload))
