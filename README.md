@@ -42,6 +42,18 @@ AWS Amplify is used to host all the static web content of the web dashboard.
 
 ## How the system work
 
+The IoT device starts to take measures as soon as the power is given to the device (in this case when the car is opened by the mobile app). Since the MQ-3 sensor quantifies the alcohol level in the air, it will sense only when the distance of the person to the ultrasonic sensor is less than 5 cm; in this way when he/she blows on the device the MQ-3 sensor can return a correct measurement of the actually alcohol in his breath.  A feedback on the distance returned by the ultrasonic sensor is given by the mini traffic light:
+- when the ultrasonic sensor measures a distance smaller than 5 cm, the green led is turned on and the user can proceed for the alcohol test by blowing on the MQ-3 sensor;
+- when the distance measured is between 5 cm and 15 cm, the yellow led is turned on meaning that the distance to compute the test is almost good but the user must to be more closed;
+- when the distance measured is greater than 15 cm, the red led is turned on meaning that the distance is too far and the user must be more close to the sensors to take the alcohol test.
+
+When the MQ-3 sensor computes the measurement, if the alcohol level is greater than 450 the box keys will remain closed and the buzzer is activated for 1 second; if the level is smaller than 450 the box keys will open and the sensors will stop sensing. In any case the value measured by the MQ-3 sensor is displayed on the web dashboard. On the web dashboard it is possible also to directly close or open the box containing the keys. When the user presses the button to close the box keys (or even if it is closed from the web dashboard), the sensors will start again to take measurements.<br>
+
+On the web dashboard there are two charts for displaying: the number of times the box keys has been open in the last seven days (values measured by the MQ-3 sensor smaller than 450) and the number of times the alcohol test returned a positive value in the last seven days. Furthermore there is a table displaying all measures taken by the MQ-3 sensor in the current day. An image of the web dashboard is attached below.
+
+
+
+<img src="img/img.png" width="400">
 
 
 
