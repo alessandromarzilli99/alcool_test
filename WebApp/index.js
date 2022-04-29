@@ -164,7 +164,14 @@ function createPlot(name, yval){
             legend: {display: false},
             title: {
             display: true,
-            }
+            },
+            scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }],
+              }
         }
         });
     return ch;
