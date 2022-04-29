@@ -49,11 +49,12 @@ The IoT device starts to take measures as soon as the power is given to the devi
 
 When the MQ-3 sensor computes the measurement, if the alcohol level is greater than 450 the box keys will remain closed and the buzzer is activated for 1 second; if the level is smaller than 450 the box keys will open and the sensors will stop sensing. In any case the value measured by the MQ-3 sensor is displayed on the web dashboard. On the web dashboard it is possible also to directly close or open the box containing the keys. When the user presses the button to close the box keys (or even if it is closed from the web dashboard), the sensors will start again to take measurements.<br>
 
-On the web dashboard there are two charts for displaying: the number of times the box keys has been open in the last seven days (values measured by the MQ-3 sensor smaller than 450) and the number of times the alcohol test returned a positive value in the last seven days. Furthermore there is a table displaying all measures taken by the MQ-3 sensor in the current day. An image of the web dashboard is attached below.
+On the web dashboard there are two charts for displaying: the number of times the box keys has been open in the last seven days (values measured by the MQ-3 sensor smaller than 450) and the number of times the alcohol test returned a positive value in the last seven days. Furthermore there is a table displaying all measures taken by the MQ-3 sensor in the current day and the two buttons used to open or close the box keys. Two images of the web dashboard are attached below.
 
 
 
-<img src="img/img.png" width="400">
+<img src="img/web_dashboard1.png" width="400"> <img src="img/img/web_dashboard2.png" width="400">
+
 
 
 
