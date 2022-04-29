@@ -1,4 +1,3 @@
-
 var xValues = [];
 var barColors = ["red", "green","blue","yellow","orange","aqua","magenta"];
 var yValues1 = [0, 0, 0, 0, 0, 0, 0];
@@ -36,7 +35,7 @@ function compare( a, b ) {
 function update_chart_values(d,val){
     curr_date = new Date().getDate();
     x = d - curr_date +6;
-    if(val< 450){
+    if(val<= 450){
         ch1.data.datasets[0].data[x] = ch1.data.datasets[0].data[x]+1
     }
     else{

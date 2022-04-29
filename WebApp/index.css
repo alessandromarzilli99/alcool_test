@@ -1,27 +1,27 @@
 .button {
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 .button1 {background-color: #4CAF50;} /* Green */
 .button2 {background-color: #008CBA;} /* Blue */
 
 .container {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-    "chart1 chart2"
-    "chart-3 statistics"
-    "buttons .";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+  "chart1 chart2"
+  "chart-3 statistics"
+  "buttons .";
 }
 
 .chart1 { grid-area: chart1; }
@@ -29,8 +29,8 @@
 .chart2 { grid-area: chart2; }
 
 .chart-3 { 
-    grid-area: chart-3;
-    margin-top: 40px;
+  grid-area: chart-3;
+  margin-top: 40px;
 }
 
 .statistics { 
@@ -44,17 +44,17 @@
 }
 
 /*#info {
-    border-style:solid;
-    border-color:#000000;
-    border-width:1px;
-    border-radius: 0px;
-    width: 200px;
-    height: 300px;
-    overflow: scroll;
-    margin-left: 60px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    padding-left: 0px;
+  border-style:solid;
+  border-color:#000000;
+  border-width:1px;
+  border-radius: 0px;
+  width: 200px;
+  height: 300px;
+  overflow: scroll;
+  margin-left: 60px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-left: 0px;
 }*/
 
 table {
