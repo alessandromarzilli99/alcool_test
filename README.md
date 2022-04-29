@@ -53,7 +53,7 @@ On the web dashboard there are two charts for displaying: the number of times th
 
 
 
-<img src="img/web_dashboard1.png" width="400"> <img src="img/img/web_dashboard2.png" width="400">
+<img src="img/web_dashboard1.png" width="1000"> <img src="img/web_dashboard2.png" width="700">
 
 
 
