@@ -56,6 +56,9 @@ static char topics[NUMOFSUBS][TOPIC_MAXLEN];
 //box button
 gpio_t box_pin = GPIO_PIN(PORT_C, 8);
 
+//buzzer
+gpio_t buzzer_pin = GPIO_PIN(PORT_C, 6);
+
 //traffic light
 gpio_t red_pin = GPIO_PIN(PORT_A, 10); //D2 -> resistor -> longled
 gpio_t yellow_pin = GPIO_PIN(PORT_B, 5); //D4 -> resistor -> longled
@@ -262,6 +265,9 @@ void sensor_init(void){
     // button box keys
     gpio_init(box_pin,GPIO_IN);
 
+    // buzzer
+    gpio_init(buzzer_pin,GPIO_OUT);
+
     //servo init
     servo_init(&servo, DEV, CHANNEL, SERVO_MIN, SERVO_MAX);
     servo_set(&servo, SERVO_MAX);
@@ -281,6 +287,9 @@ void check_alcool(void){
     if (sample > 450) {
         printf("Alert: value = %i\n", sample);
         pub(TOPIC_IN,"NON GUIDARE ST*ONZO!!!!!");//prova se va mqtts
+        gpio_set(buzzer_pin);
+        xtimer_sleep(1);
+        gpio_clear(buzzer_pin);
     } else {
         printf("Normal: value = %i\n", sample);
         //open box keys
