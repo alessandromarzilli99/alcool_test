@@ -63,6 +63,10 @@ On the web dashboard there are two charts for displaying: the number of times th
 ## Network performance
 
 
+In order to measure the latency from the web dashboard to the IoT device and vice versa I used the prototype built. To send the value of the alcohol test taken by the MQ-3 sensor to the web dashboard (and so to display the value in the charts) the latency measured was smaller than 2 seconds, which of course is enough for the system. The latency measured from when a button (close or open it doesn’t matter) is clicked to when the box is actually opened or closed is circa 1 second, which is still acceptable for the system.<br>
+
+The volume of data transmitted over the network is less than 10 bytes.  The value published under the topic “alcool_level” is 3 bytes, the value published under the topic “topic_in” is 5 bytes. In particular to transmit data from the board to mosquitto it was chosen MQTT-SN because of its peculiarities: it reduces the size of the message payload and removes the need for a permanent connection by using UDP as the transport protocol. 
+
 
 
 
