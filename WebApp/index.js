@@ -33,8 +33,21 @@ function compare( a, b ) {
 }
 
 function update_chart_values(d,val){
-    curr_date = new Date().getDate();
-    x = d - curr_date +6;
+    data = new Date();
+    curr_date = data.getDate();
+    month = data.getMonth();
+    x = d.getDate() - curr_date +6;
+    if(x>6){
+        if(month==4 || month==6 || month==9 || month==11){
+            x = x - 30;
+        }
+        else if(month == 2){
+            x = x - 28;
+        }
+        else{
+            x = x - 31;
+        }
+    }
     if(val<= 450){
         ch1.data.datasets[0].data[x] = ch1.data.datasets[0].data[x]+1
     }
@@ -47,8 +60,9 @@ function update_chart_values(d,val){
 }
 
 function update_chart_labels(date){
+    month = date.getMonth()
     day = date.getDay() + 1
-    date_month = date.getDate() - 6
+    date_month = date.getDate() - 7
     for(let i=0;i<7;i++){
         day_week = (day + i)%7
         
@@ -74,7 +88,24 @@ function update_chart_labels(date){
             case  6:
                 d = "Sat";
         }
-        label = d + " " + (date_month+i).toString()
+        date_month = date_month + 1
+
+        if(date_month < 1){
+            if(month==4 || month==6 || month==9 || month==11){
+                date_m = 30 + date_month
+            }
+            else if(month == 2){
+                date_m = 28 + date_month 
+            }
+            else{
+                date_m = 31 + date_month 
+            }
+            label = d + " " + (date_m).toString()
+        }
+        else{
+            label = d + " " + (date_month).toString()
+        }
+        
         ch1.data.labels.push(label);
         
         ch1.update();
@@ -110,7 +141,7 @@ function displayData(data){
             continue;
         }
         else{
-            update_chart_values(day_month,values[i]["alcool_level"])
+            update_chart_values(date_test,values[i]["alcool_level"])
 
             if(day_week==current_date.getDay()){
                 if(date_test.getMinutes()<10){
@@ -147,7 +178,6 @@ function callAPI(){
     .then(result => displayData(JSON.parse(result).body))
     
 }
-
 
 function createPlot(name, yval){
 
@@ -190,4 +220,4 @@ function init(){
     callAPI();
 
 }
-    
+  
