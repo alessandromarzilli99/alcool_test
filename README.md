@@ -119,5 +119,5 @@ These are all the steps you need to do to run and enjoy the system.
     }
     ```
   - API Gateway:<br>
-  blabla
+  click on the button “Create API” and select the option “REST API”. In the “API name” field type “alcooltestAPI” and select “Edge optimized” in the “Endpoint Type” drop-down. Once the API is created, in the left nav select “Resources'' and with the “/” resource selected click “Create Method” from the Action drop-down menu. Select POST from the new drop-down menu then click on the checkmark; select “lambda function” for the “integration type” and type “get_data_from_db” into the “Lambda Function” field. With the newly created POST method selected, select “Enable CORS” from the “Action” drop-down menu. Then in the "Actions" drop-down list select "Deploy API"; select "[New Stage]" in the "Deployment stage" drop-down list, enter “dev” for the "Stage Name" and click on “Deploy”. Copy and save the URL next to "Invoke URL" (you will need it later). Repeat all these steps also to create a GET resource linked to the lambda function “publish_topicin”.
 
