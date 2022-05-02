@@ -146,8 +146,15 @@ These are all the steps you need to do to run and enjoy the system.
     ```
     make flash term
     ```
+## Useful links
 
+This is my [LinkedIn accoun](https://www.linkedin.com/in/alessandro-marzilli-84a07a235/).<br>
 
+[Here]() there is a blog post related to this project.<br>
+
+[Here]() there is a a youtube video to show the prototype built in action.<br>
+
+[Here](https://dev.d3dtkbjgsjedi9.amplifyapp.com) there is the link to the web dashboard.<br>
 
 
 
