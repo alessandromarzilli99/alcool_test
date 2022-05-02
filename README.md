@@ -133,6 +133,8 @@ These are all the steps you need to do to run and enjoy the system.
     python3 transparent_bridge.py
     ```
   - Connect all the sensors and actuators to the board using the following schema
+  <img src="img/connections.png" width="700">
+  For the buzzer it was used a resistence of 1 Ohm and for the button it was used a resistence of 10K Ohm.
 
   - Clone the [RIOT repository](https://github.com/RIOT-OS/RIOT) under the “Riot Code” folder of this repository. Connect the board to the machine and run the following commands:
 
