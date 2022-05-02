@@ -148,7 +148,7 @@ These are all the steps you need to do to run and enjoy the system.
     ```
 ## Useful links
 
-This is my [LinkedIn accoun](https://www.linkedin.com/in/alessandro-marzilli-84a07a235/).<br>
+This is my [LinkedIn account](https://www.linkedin.com/in/alessandro-marzilli-84a07a235/).<br>
 
 [Here]() there is a blog post related to this project.<br>
 
