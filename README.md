@@ -120,4 +120,10 @@ These are all the steps you need to do to run and enjoy the system.
     ```
   - API Gateway:<br>
   click on the button “Create API” and select the option “REST API”. In the “API name” field type “alcooltestAPI” and select “Edge optimized” in the “Endpoint Type” drop-down. Once the API is created, in the left nav select “Resources'' and with the “/” resource selected click “Create Method” from the Action drop-down menu. Select POST from the new drop-down menu then click on the checkmark; select “lambda function” for the “integration type” and type “get_data_from_db” into the “Lambda Function” field. With the newly created POST method selected, select “Enable CORS” from the “Action” drop-down menu. Then in the "Actions" drop-down list select "Deploy API"; select "[New Stage]" in the "Deployment stage" drop-down list, enter “dev” for the "Stage Name" and click on “Deploy”. Copy and save the URL next to "Invoke URL" (you will need it later). Repeat all these steps also to create a GET resource linked to the lambda function “publish_topicin”.
+  
+  - AWS Amplify:<br>
+  first edit the code in the file WebbApp/index.js : in the functions “publish_topic_to_iotcore” and “callAPI” change the argument of the “fetch” function with the URL copied in the last step. Then create a new app. Click “get started” under “Host your web app”, select “Deploy without Git Provider” and click on “continue”. In the “App name” field type “AlcoolTest”, for the “Environment” name type “dev” and select the option “Drag and Drop”. Then compress the code provided in the WebApp folder and upload it.
+  
+- ### IoT device level
+
 
