@@ -71,3 +71,10 @@ The volume of data transmitted over the network is less than 10 bytes.  The valu
 
 
 ## Walkthrough
+
+These are all you need to do to run and enjoy the system.
+- ### Cloud level
+
+  - IoT Core:<br>
+    <img align="right" src="img/iotfoldef.png" height="300">
+     to set up a new thing click on the button “connect device” in the [main page of AWS IoT](https://us-east-1.console.aws.amazon.com/iot/home?region=us-east-1#/home). Use “alcooltest” as the name of the thing and follow the instructions to configure the setting. At the end of the configuration, inside the folder where the zip file was unzipped, you should see the same files of the image on the right.
