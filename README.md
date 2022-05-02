@@ -75,6 +75,10 @@ The volume of data transmitted over the network is less than 10 bytes.  The valu
 These are all the steps you need to do to run and enjoy the system.
 - ### Cloud level
 
+  - DynamoDB:<br>
+  create a table with the name “alcooltest”, insert “ts” in the box “partition key” and select “Number” from the drop-down menu near the box.
+ 
+
   - IoT Core:<br>
     <img align="right" src="img/iotfoldef.png" height="300">
      to set up a new thing click on the button “connect device” in the [main page of AWS IoT](https://us-east-1.console.aws.amazon.com/iot/home?region=us-east-1#/home). Use “alcooltest” as the name of the thing and follow the instructions to configure the setting. At the end of the configuration you should see the same files of the image on the right inside the folder where the zip file was unzipped.<br><br> Now go to Secure -> Policies -> alcooltest-Policy and click on “edit active version”. Append “,arn:aws:iot:us-east-1:756981985227:topic/topic_in,arn:aws:iot:us-east-1:756981985227:topic/alcool_level” at the end of the first box “Policy resource”, and append “,arn:aws:iot:us-east-1:756981985227:topicfilter/topic_in,arn:aws:iot:us-east-1:756981985227:topicfilter/alcool_level” at the end of the second box. Then select “set the edit version as the active version for this policy” and click on “save as new version”.<br><br> Then go to Act -> Rules and click on the “create” button. Set “alcooltest_rule” as the name of the rule, replace the text in “Rule query statement” with “SELECT message FROM ‘alcool_level’”and click on the button “add action”. Select “insert a message into a Dynamo table” and click on “configure action”. Select from the drop-down list of “table name” the table “alcool_test”. Check if “partition key” is “ts”, if “partition key type” is “NUMBER” and insert “${timestamp()}” in “partition key value”. Then write “level” in the box “write message data to this column”, create a role user and click on “add action”. Then click on “create rule”.
