@@ -55,11 +55,6 @@ On the web dashboard there are two charts for displaying: the number of times th
 
 <img src="img/web_dashboard1.png" width="1000"> <img src="img/web_dashboard2.png" width="700">
 
-
-
-
-
-
 ## Network performance
 
 
@@ -84,46 +79,76 @@ These are all the steps you need to do to run and enjoy the system.
   - Lambda:<br>
   create 2 lambda functions by clicking on the button “create function”. For both of them select “python 3.8” from the drop-down menu of “Runtime”. Give the name “get_data_from_db” to one function and the name “publish_topicin” to the other one. Then replace the code under “Code source” with the one available in the folder “Lambda” and save the changes. The last step is to configure the policy in order to get data from DynamoDB in the first case and to publish in IoT core in the second case. To set the policy click on the “Configuration” tab and select “Permissions” from the right side menu; in the “Execution role” box click on the role (a new browser tab will open), then click on the drop-down menu “Add permissions” on the right of the “permission policies” box and select “create inline policy”. Click on the “JSON” tab and replace the following code in the text area:
     - for the “get_data_from_db” function use the following code, taking care to replace the ARN of the table created previously in the “Resource” field on line 15:<br>
-    ```JSON
-    {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "dynamodb:PutItem",
-                "dynamodb:DeleteItem",
-                "dynamodb:GetItem",
-                "dynamodb:Scan",
-                "dynamodb:Query",
-                "dynamodb:UpdateItem"
-            ],
-            "Resource": "YOUR-TABLE-ARN"
-        }
-        ]
-    }
-    ```
+      ```JSON
+      {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Sid": "VisualEditor0",
+              "Effect": "Allow",
+              "Action": [
+                  "dynamodb:PutItem",
+                  "dynamodb:DeleteItem",
+                  "dynamodb:GetItem",
+                  "dynamodb:Scan",
+                  "dynamodb:Query",
+                  "dynamodb:UpdateItem"
+              ],
+              "Resource": "YOUR-TABLE-ARN"
+          }
+          ]
+      }
+      ```
     - for the “publish_topicin” function use the following code:
-    ```JSON
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "VisualEditor0",
-                "Effect": "Allow",
-                "Action": "iot:Publish",
-                "Resource": "*"
-            }
-        ]
-    }
-    ```
+      ```JSON
+      {
+          "Version": "2012-10-17",
+          "Statement": [
+              {
+                  "Sid": "VisualEditor0",
+                  "Effect": "Allow",
+                  "Action": "iot:Publish",
+                  "Resource": "*"
+              }
+          ]
+      }
+      ```
   - API Gateway:<br>
   click on the button “Create API” and select the option “REST API”. In the “API name” field type “alcooltestAPI” and select “Edge optimized” in the “Endpoint Type” drop-down. Once the API is created, in the left nav select “Resources'' and with the “/” resource selected click “Create Method” from the Action drop-down menu. Select POST from the new drop-down menu then click on the checkmark; select “lambda function” for the “integration type” and type “get_data_from_db” into the “Lambda Function” field. With the newly created POST method selected, select “Enable CORS” from the “Action” drop-down menu. Then in the "Actions" drop-down list select "Deploy API"; select "[New Stage]" in the "Deployment stage" drop-down list, enter “dev” for the "Stage Name" and click on “Deploy”. Copy and save the URL next to "Invoke URL" (you will need it later). Repeat all these steps also to create a GET resource linked to the lambda function “publish_topicin”.
   
   - AWS Amplify:<br>
-  first edit the code in the file WebbApp/index.js : in the functions “publish_topic_to_iotcore” and “callAPI” change the argument of the “fetch” function with the URL copied in the last step. Then create a new app. Click “get started” under “Host your web app”, select “Deploy without Git Provider” and click on “continue”. In the “App name” field type “AlcoolTest”, for the “Environment” name type “dev” and select the option “Drag and Drop”. Then compress the code provided in the WebApp folder and upload it.
+  first edit the code in the file WebbApp/index.js : in the functions “publish_topic_to_iotcore” and “callAPI” change the argument of the “fetch” function with the URL copied in the last step. Then create a new app. Click “get started” under “Host your web app”, select “Deploy without Git Provider” and click on “continue”. In the “App name” field type “AlcoolTest”, for the “Environment” name type “dev” and select the option “Drag and Drop”. Then compress the code provided in the WebApp folder and upload it. Now you can open the web dashboard from the link provided by AWS Amplify.
   
 - ### IoT device level
+  - First of all you need to clone this repository to your machine.
+
+  - Clone the [repository](https://github.com/eclipse/mosquitto.rsmb) of mosquitto.rsmb and follow the guide in the link to set up the system correctly. Then go in the folder mosquitto.rsmb/rsmb/src and run the command:
+
+    ```
+    ./broker_mqtts config.conf
+    ```
+  - copy the file “transparent_bridge.py” provided in this repository inside the folder created during the IoT core setup (the “aws” folder in the previous image). Then run the following command inside this folder:
+
+    ```
+    python3 transparent_bridge.py
+    ```
+  - Connect all the sensors and actuators to the board using the following schema
+
+  - Clone the [RIOT repository](https://github.com/RIOT-OS/RIOT) under the “Riot Code” folder of this repository. Connect the board to the machine and run the following commands:
+
+    ```
+    cd
+    sudo ./RIOT/dist/tools/tapsetup/tapsetup
+    sudo ip a a fec0:affe::1/64 dev tapbr0
+    ```
+    then go inside the “Riot Code” folder and run the command:
+
+    ```
+    make flash term
+    ```
+
+
+
+
 
 
