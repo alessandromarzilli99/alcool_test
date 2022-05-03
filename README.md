@@ -133,7 +133,7 @@ These are all the steps you need to do to run and enjoy the system.
     ```
     python3 transparent_bridge.py
     ```
-  - Connect all the sensors and actuators to the board using the following schema. For the buzzer, it was used a resistance of 1 Ohm and for the button, it was used a resistance of 10K Ohm.<br>
+  - Connect all the sensors and actuators to the board using the following schema. It was used a resistor of 1 Ohm for the buzzer and a resistor of 10K Ohm for the button.<br>
     <img src="img/connections.png" width="600">
   
 
