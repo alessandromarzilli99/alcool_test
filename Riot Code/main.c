@@ -60,9 +60,9 @@ gpio_t box_pin = GPIO_PIN(PORT_C, 8);
 gpio_t buzzer_pin = GPIO_PIN(PORT_C, 6);
 
 //traffic light
-gpio_t red_pin = GPIO_PIN(PORT_A, 10); //D2 -> resistor -> longled
-gpio_t yellow_pin = GPIO_PIN(PORT_B, 5); //D4 -> resistor -> longled
-gpio_t green_pin = GPIO_PIN(PORT_A, 6); //D12 -> resistor -> longled
+gpio_t red_pin = GPIO_PIN(PORT_A, 10); //D2
+gpio_t yellow_pin = GPIO_PIN(PORT_B, 5); //D4 
+gpio_t green_pin = GPIO_PIN(PORT_A, 6); //D12 
 
 //HC-SR04 ultrasonic
 gpio_t trigger_pin = GPIO_PIN(PORT_A, 9); //D8
@@ -104,8 +104,7 @@ int distance_ultrasonic(void){
     return dist;
 }
 
-
-//mq135 sensor
+//mq3 sensor
 int read_mq3(void){
     int sample = 0;
     int min = 100;
@@ -251,7 +250,7 @@ void mqtts_init(void){
 void sensor_init(void){
     //ultrasonic
 	gpio_init(trigger_pin, GPIO_OUT);
-	gpio_init_int(echo_pin, GPIO_IN, GPIO_BOTH, &call_back, NULL); //imposta callback quando riceve input
+	gpio_init_int(echo_pin, GPIO_IN, GPIO_BOTH, &call_back, NULL);
     distance_ultrasonic(); //first read returns always 0
 
     //mq135
@@ -274,7 +273,7 @@ void sensor_init(void){
 }
 
 
-//check the alcool level through the mq135 sensor
+//check the alcool level through the mq3 sensor
 void check_alcool(void){
 
     int sample = 0;
@@ -286,7 +285,7 @@ void check_alcool(void){
 
     if (sample > 450) {
         printf("Alert: value = %i\n", sample);
-        pub(TOPIC_IN,"NON GUIDARE ST*ONZO!!!!!");//prova se va mqtts
+        pub(TOPIC_IN,"NON GUIDARE");
         gpio_set(buzzer_pin);
         xtimer_sleep(1);
         gpio_clear(buzzer_pin);
