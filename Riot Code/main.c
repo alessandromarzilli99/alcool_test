@@ -253,7 +253,7 @@ void sensor_init(void){
 	gpio_init_int(echo_pin, GPIO_IN, GPIO_BOTH, &call_back, NULL);
     distance_ultrasonic(); //first read returns always 0
 
-    //mq135
+    //mq3
     adc_init(ADC_LINE(0));
 
     //traffic light
