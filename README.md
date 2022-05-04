@@ -160,5 +160,6 @@ This is my [LinkedIn account](https://www.linkedin.com/in/alessandro-marzilli-84
 [Here](https://dev.d3dtkbjgsjedi9.amplifyapp.com) there is the link to the web dashboard.<br>
 
 ## Gallery
-<img src="img/prototype1.png" width="500"> <img src="img/prototype2.png" width="500">
-<img src="img/prototype3.png" width="500">
+<img src="img/prototype1.png" width="400"> 
+<img src="img/prototype2.png" width="400">
+<img src="img/prototype3.png" width="400">
