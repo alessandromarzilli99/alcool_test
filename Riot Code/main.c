@@ -285,7 +285,6 @@ void check_alcool(void){
 
     if (sample > 450) {
         printf("Alert: value = %i\n", sample);
-        pub(TOPIC_IN,"NON GUIDARE");
         gpio_set(buzzer_pin);
         xtimer_sleep(1);
         gpio_clear(buzzer_pin);
@@ -296,7 +295,7 @@ void check_alcool(void){
         box_keys=1;
     }
     
-    pub(TOPIC_OUT1,msg); //pub level of alcool when measured so it can be read on the web site
+    pub(TOPIC_OUT1,msg); //pub level of alcohol when measured so it can be read on the web site
 
 }
 
