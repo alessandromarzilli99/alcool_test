@@ -351,7 +351,6 @@ int main(void){
             while(box_keys==1){
                 result = gpio_read(box_pin);
                 if(result>0){
-                    printf("ciao hahahhaha %i\n",result);
                     box_keys=0;
                     //close box keys
                     servo_set(&servo, SERVO_MAX);
