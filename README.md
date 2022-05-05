@@ -50,16 +50,16 @@ The IoT device starts to take measures as soon as the power is given to the devi
 When the MQ-3 sensor computes the measurement, if the alcohol level is greater than 450 the box keys will remain closed and the buzzer is activated for 1 second; if the level is smaller or equal to 450 the box keys will open and the sensors will stop sensing. In any case, the value measured by the MQ-3 sensor is displayed on the web dashboard. From the last one, it is also possible to close or open the box directly. When it's closed by the user when pressing the button or even from the web app the sensors will start again to take measurements.<br>
 
 On the web dashboard there are :
-- Two charts for displaying: the number of times per day the box keys has been open in the last seven days (values measured by the MQ-3 sensor smaller or equal to 450) and the number of times per day the alcohol test has returned a positive value in the last seven days. 
-- A table displaying all measures taken by the MQ-3 sensor in the current day.
-- The two buttons used to open or close the box keys. 
-- Some statistics regarding the tests computed in the last seven days: the time slot in which the greatest number of tests resulted positive (a value between 8-12, 12-17, 17-20, 20-24 and 00-8); the number of times the box containing the keys has been opened; the number of time the breathalyzer detected a value over the limits; the percentage of positive tests over the total tests.
+- two charts for displaying: the number of times per day the box keys has been open in the last seven days (values measured by the MQ-3 sensor smaller or equal to 450) and the number of times per day the alcohol test has returned a positive value in the last seven days;
+- a table displaying all measures taken by the MQ-3 sensor in the current day;
+- the two buttons used to open or close the box keys;
+- some statistics regarding the tests computed in the last seven days: the time slot in which the greatest number of tests resulted positive (a value between 8-12, 12-17, 17-20, 20-24, and 00-8); the number of times the box containing the keys has been opened; the number of time the breathalyzer detected a value over the limits; the percentage of positive tests over the total tests.
 
 Two images of the web dashboard are attached below.
 
 
 
-<img src="img/web_dashboard1.png" width="1000"> <img src="img/web_dashboard2.png" width="1000">
+<img src="img/web_dashboard1.png" width="1100"> <img src="img/web_dashboard2.png" width="1100">
 
 ## Network performance
 
