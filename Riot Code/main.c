@@ -327,8 +327,6 @@ int main(void){
     sensor_init();
     mqtts_init();
 	
-    
-
 	while(true){
         if(box_keys==0){
             dist=distance_ultrasonic();
@@ -360,10 +358,7 @@ int main(void){
             }
         }
 
-
         xtimer_sleep(5);
-
-
 	}
     return 0;
-}//ok
+}
