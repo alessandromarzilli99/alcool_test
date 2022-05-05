@@ -19,7 +19,7 @@ Since the alcohol test can be done at any moment by the user, periodic sensing i
 ### Actuators
 The actuators used in the system are the servo motor, three LEDs (mini traffic light), a button, and a buzzer.
 - #### Servo motor KY66:
-  The servo motor is used to open or close the box containing the keys of the car. If the alcohol sensor returns a value smaller than 450, the box will open so the keys can be taken. If the value measured is greater than 450 the box keys will remain closed. (the datasheet of the servo motor can be found [here](http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf)).
+  The servo motor is used to open or close the box containing the keys of the car. If the alcohol sensor returns a value smaller or equal to 450, the box will open so the keys can be taken. If the value measured is greater than 450 the box keys will remain closed. (the datasheet of the servo motor can be found [here](http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf)).
 - #### Mini traffic light:
   It has three LEDs: red, yellow, and green. They are used to provide feedback on the distance measured by the ultrasonic sensor. The red led is turned on when the distance is greater than 15 cm; the yellow one is turned on when the distance is between 5 cm and 15 cm; the green one is turned on when the distance is smaller than 5 cm. When the green led is on it means that the person is close enough to the sensors and can proceed to make the alcohol test, so the MQ 3 sensor is activated and can measure the alcohol level. (the datasheet of the mini traffic light can be found [here](https://cdn.shopify.com/s/files/1/1509/1638/files/LED_Ampel_Modul_Datenblatt_AZ-Delivery_Vertriebs_GmbH.pdf?v=1607630369)).
 - #### Button:
