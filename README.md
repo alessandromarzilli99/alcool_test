@@ -59,7 +59,7 @@ Two images of the web dashboard are attached below.
 
 
 
-<img src="img/web_dashboard1.png" width="1000"> <img src="img/web_dashboard2.png" width="700">
+<img src="img/web_dashboard1.png" width="1000"> <img src="img/web_dashboard2.png" width="1000">
 
 ## Network performance
 
