@@ -153,7 +153,7 @@ These are all the steps you need to do to run and enjoy the system.
 
 This is my [LinkedIn account](https://www.linkedin.com/in/alessandro-marzilli-84a07a235/).<br>
 
-[Here]() there is a blog post related to this project.<br>
+[Here](https://www.hackster.io/alessandro-marzilli/alcohol-test-b53117) there is a blog post related to this project.<br>
 
 [Here]() there is a youtube video to show how the system works.<br>
 
