@@ -167,7 +167,7 @@ This is my [LinkedIn account](https://www.linkedin.com/in/alessandro-marzilli-84
 
 [Here](https://www.hackster.io/alessandro-marzilli/alcohol-test-b53117) there is a blog post related to this project.<br>
 
-[Here]() there is a youtube video to show how the system works.<br>
+[Here](https://www.youtube.com/watch?v=I-aAmA5SnnM) there is a youtube video to show how the system works.<br>
 
 [Here](https://dev.d3dtkbjgsjedi9.amplifyapp.com) there is the link to the web dashboard.<br>
 
