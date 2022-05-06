@@ -156,11 +156,6 @@ These are all the steps you need to do to run and enjoy the system.
     make flash term
     ```
 
-## Gallery
-<img src="img/prototype1.png" width="400"> 
-<img src="img/prototype2.png" width="400">
-<img src="img/prototype3.png" width="400">
-
 ## Useful links
 
 This is my [LinkedIn account](https://www.linkedin.com/in/alessandro-marzilli-84a07a235/).<br>
@@ -171,3 +166,7 @@ This is my [LinkedIn account](https://www.linkedin.com/in/alessandro-marzilli-84
 
 [Here](https://dev.d3dtkbjgsjedi9.amplifyapp.com) there is the link to the web dashboard.<br>
 
+## Gallery
+<img src="img/prototype1.png" width="400"> 
+<img src="img/prototype2.png" width="400">
+<img src="img/prototype3.png" width="400">
