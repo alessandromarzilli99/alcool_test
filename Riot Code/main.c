@@ -258,7 +258,7 @@ void sensor_init(void){
 
     //traffic light
     gpio_init(red_pin, GPIO_OUT);
-    gpio_init(yellow_pin, GPIO_OUT);
+gpio_init(yellow_pin, GPIO_OUT);
     gpio_init(green_pin, GPIO_OUT);
 
     // button box keys
