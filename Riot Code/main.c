@@ -249,7 +249,7 @@ void mqtts_init(void){
 
 void sensor_init(void){
     //ultrasonic
-	gpio_init(trigger_pin, GPIO_OUT);
+    gpio_init(trigger_pin, GPIO_OUT);
 	gpio_init_int(echo_pin, GPIO_IN, GPIO_BOTH, &call_back, NULL);
     distance_ultrasonic(); //first read returns always 0
 
